@@ -1,0 +1,151 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<title>栏目制定</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="../static/js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../static/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/lanmu.css" />
+<script src="../static/js/Sortable.js" type='text/javascript'></script>
+</head>
+<body>
+	<div class="divHead divHead01 clearfix">
+		<h2>已选栏目</h2>
+        <a href="javascript:void(0);" class="editBtn">保存</a>
+	</div>
+	<ul id="lanmuOn" class="lanmu clearfix">
+        <li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>头条头条</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>科技</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>军事</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>南京</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>社会</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>足球</b></a>
+		</li>
+		<li class="lanmuOnLi clearfix">
+			<span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span>
+			<a href="javascript:;" class="aLanmuOn" name="on"><b>娱乐</b></a>
+		</li>
+	</ul>
+	<div class="divHead divHead02 clearfix">
+		<h2>未选栏目</h2>
+	</div>
+	<div id="lanmuOut" class="lanmu clearfix">
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>财经</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>时尚</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>汽车</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>健康</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>情感</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>家居</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>教育</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>亲子</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>心理</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>杂谈</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>搞笑</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>经验</b></a>
+		<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>热点</b></a>
+	</div>
+</body>
+<script>
+$(document).ready(function(){
+	move();
+	addList();
+	resetWidth();
+});
+function resetWidth(){
+	var aLanmuWid = ($("#lanmuOut").width() - 50)/4;
+	var aLanmuWid01 = ($("#lanmuOn").width() - 40)/4;
+	$("#lanmuOut a").width(aLanmuWid);
+	$("#lanmuOn .lanmuOnLi").width(aLanmuWid).css("margin","5px 5px 10px 5px");
+	$("#lanmuOn .aLanmuOn").width(aLanmuWid).css("margin","0");
+	$("#lanmuOn .iconBtnBg").css({"top":"-4px","left":"-4px"});
+}
+
+function unclick(){
+	document.getElementByName("on").onclick = function(){}
+}
+function addList(){
+	var divs = document.getElementsByName("remove");
+	var len = divs.length;
+	for(var i=0; i<len; i++){
+		divs[i].addEventListener('touchend', function(event) {
+		  outFun(this);
+		//event.preventDefault();//阻止其他事件
+		})
+	}
+}
+function removeList(){
+	var divs = document.getElementsByName("remove");
+	var len = divs.length;
+	for(var i=0; i<len; i++){
+		divs[i].removeEventListener('touchend', function(event) {
+		  outFun(this);
+		//event.preventDefault();//阻止其他事件
+		})
+	}
+}
+  	
+
+function outFun(obj){
+	var myValue = $(obj).parent().find("b").html();
+	var editHtml = '<a onclick="onFun(this)" href="javascript:;" class="aLanmuOut"><span>+</span><b>'+myValue+'</b></a>';
+	$("#lanmuOut").append(editHtml);
+	$(obj).parent().remove();
+	resetWidth();
+	removeList();
+}
+function onFun(obj){
+	var myValue = $(obj).find("b").html();
+	var editHtml = '<li class="lanmuOnLi clearfix"><span class="iconBtnBg" name="remove" onClick="outFun(this)"><span class="iconBtn">-</span></span><a href="javascript:;" class="aLanmuOn"><b>'+myValue+'</b></a></li>';
+	$("#lanmuOn").append(editHtml);
+	$(obj).remove();
+	resetWidth();
+	addList();
+}
+//拖拽
+function move(){
+	var console = window.console;
+	if( !console.log ){
+		console.log = function (){
+			alert([].join.apply(arguments, ' '));
+		};
+	}
+	var sortable = new Sortable(lanmuOn, {
+		group: "words",
+		store: {
+			get: function (sortable) {
+				var order = localStorage.getItem(sortable.options.group);
+				return order ? order.split('|') : [];
+			},
+			set: function (sortable) {
+				var order = sortable.toArray();
+				localStorage.setItem(sortable.options.group, order.join('|'));
+			}
+		},
+		onAdd: function (evt){ console.log('onAdd.lanmuOn:', evt.item); },
+		onUpdate: function (evt){ console.log('onUpdate.lanmuOn:', evt.item); },
+		onRemove: function (evt){ console.log('onRemove.lanmuOn:', evt.item); },
+		onStart:function(evt){ console.log('onStart.lanmuOn:',evt.item);},
+		onEnd: function(evt){ console.log('onEnd.lanmuOn:', evt.item);}
+	});
+}
+
+</script>
+</html>
