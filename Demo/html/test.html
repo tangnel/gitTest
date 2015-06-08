@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css不规则图形专题</title>
+</head>
+<style>
+.clearfix{ display:block;}
+.clearfix:after{content: "."; display:block;  height:0; font-size:0; clear:both; visibility:hidden;}
+.demoTest{width:100%; margin:0 auto;}
+.box{margin:0 auto; width:1000px;}
+.box .example{margin:0 auto;}
+.exampleBox{background:#f8f8f8; padding:20px 0; margin-top:10px;}
+.exampleStyle{color:#FF0080}
+.example01 .example{height:20px; width:20px; border-color:#FF9600 #3366ff #12ad2a #f0eb7a; border-style:solid; border-width:20px;}
+.example02 .example{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 #3366ff #12ad2a #f0eb7a; border-style:solid; border-width:20px;}
+.example03 .example{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 transparent transparent transparent; border-style:solid; border-width:20px;}
+.example04 .example{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 transparent transparent transparent; border-style:solid dashed dashed dashed; border-width:20px;}
+.example05 .example{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 #3366ff transparent transparent; border-style:solid solid dashed dashed; border-width:40px 40px 0 0;}
+.excon{position:relative; display:block; height:80px; margin-left:450px;}
+.example06 .excon .sigle{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:transparent #FF9600 transparent transparent; border-style:dashed solid dashed dashed; border-width:35px 45px 4px 0px; float:left;}
+.example06 .excon .example{height:60px; width:200px; background-color:#FF9600; float:left;position:absolute; left:20px;}
+.radiusA{width:24px; height:0; overflow:hidden; line-height:0; font-size:0; border-color:transparent transparent #FF9600 transparent; border-style:dashed dashed solid dashed; border-width:0 3px 3px 3px;}
+.radiusB{width:30px; height:24px; background:#FF9600; border:none;}
+.radiusC{width:24px; height:0; overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 transparent transparent transparent; border-style:solid dashed dashed dashed; border-width:3px 3px 0 3px;}
+.tips{color:#000;}
+</style>
+<body>
+    <div class="demoTest">
+        <h3 class="box">利用盒模型，css画出不规则图形</h3>
+        <div class="box">
+            <p>一个盒子包括：margin+border+padding+content。上下左右边框交界处出呈现平滑的斜线。利用这个特点，通过设置不同的上下左右边框宽度或者颜色可以得到小三角，小梯形等。 调整宽度大小可以调节三角形形状。</p>
+            <img src="../static/images/11.jpg" style="margin-left:300px"/>
+        </div>
+        <div class="box exampleBox example01">
+            <p class="extitle">示例1：一般情况下，我们设置盒子的宽高度及上下左右边框，会呈现如下图：</p>
+            <div class="example"></div>
+            <div class="exampleStyle">.example{height: 20px; width: 20px; border-color: #FF9600 #3366ff #12ad2a #f0eb7a; border-style: solid; border-width: 20px;}</div>
+        </div>
+        <div class="box exampleBox example02">
+            <p class="extitle">示例2在上面基础上，我们把宽高度都设为0时，会呈现上述的边界斜线：</p>
+            <div class="example"></div>
+            <div class="exampleStyle">.example{<span class="tips">height:0; width:0;</span> overflow:hidden; line-height:0; font-size:0; border-color:#FF9600 #3366ff #12ad2a #f0eb7a; border-style:solid; border-width:20px;}</div>
+        </div>
+        <div class="box exampleBox example03">
+            <p class="extitle">示例3：只保留上面的红色，如下图：</p>
+            <div class="example"></div>
+            <div class="exampleStyle">.example{height: 20px; width: 20px; <span class="tips">border-color: #FF9600 transparent transparent transparent;</span> border-style: solid; border-width: 20px;}</div>
+        </div>
+        <div class="box exampleBox example04">
+            <p class="extitle">示例4：IE6下，设置余下三条边的border-style为dashed，即可达到透明的效果，如下图：</p>
+            <div class="example"></div>
+            <div class="exampleStyle">.example{height: 20px; width: 20px; border-color: #FF9600 transparent transparent transparent; <span class="tips">border-style: solid dashed dashed dashed;</span> border-width: 20px;}</div>
+        </div>
+        <div class="box exampleBox example05">
+            <p class="extitle">示例5:斜边在盒子的对角线上，如下图：</p>
+            <div class="example"></div>
+            <div class="exampleStyle">.example{height: 20px; width: 20px; <span class="tips">border-color: #FF9600 #3366ff transparent transparent;</span> border-style: solid solid dashed dashed; <span class="tips">border-width:40px 40px 0 0;}</span></div>
+        </div>
+        <div class="box exampleBox example06">
+            <p class="extitle">示例6斜边在盒子的对角线上，如下图：</p>
+            <div class="excon clearfix">
+                <div class="sigle"></div>
+                <div class="example">我是text</div>
+            </div>
+            <div class="exampleStyle"><span class="tips">.sigle{height:0; width:0; overflow:hidden; line-height:0; font-size:0; border-color:transparent #FF9600 transparent transparent; border-style:dashed solid dashed dashed; border-width:35px 45px 4px 0px; float:left;}</span><br />.example{height:60px; width:200px; background-color:#FF9600; float:left;position:absolute; left:20px;}<br /><span style="color:#000">IE6浏览器不支持transparent透明属性，就border生成三角技术而言，直接设置对应的透明边框的border-style属性为dotted或是dashed即可解决这一问题，原因是在IE6下，点线与虚线均以边框宽度为基准，点线长度必须是其宽度的3倍以上(height>=border-width*3)，虚线宽长度必须是其宽度的5倍以上(height>=border-width*5)，否则点线和虚线都不会出现。<span></div>
+        </div>
+        <div class="box exampleBox example07">
+            <p class="extitle">示例7自适应圆角，如下图：</p>
+            <div class="excon clearfix">
+                <div class="radiusA"></div>
+                <div class="radiusB"></div>
+                <div class="radiusC"></div>
+            </div>
+            <div class="exampleStyle">
+            .radiusA{width:24px; height:0; <span class="tips">overflow:hidden; line-height:0; font-size:0;</span> border-color:transparent transparent red transparent; border-style:dashed dashed solid dashed; border-width:0 3px 3px 3px;}<br />
+.radiusB{width:30px; height:24px; background:red; border:none;}<br />
+.radiusC{width:24px; height:0; <span class="tips">overflow:hidden; line-height:0; font-size:0;</span> border-color:red transparent transparent transparent; border-style:solid dashed dashed dashed; border-width:3px 3px 0 3px;}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

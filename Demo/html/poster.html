@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="../static/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/myScroll.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+<title>海报详细页</title>
+</head>
+
+<body>
+<div class="p-index">
+	<!--首页-->
+ 	<div class="m-page show">
+        <div class="m-img m-img-index"></div>
+		<div class="m-animate m-animate-index">
+			<div class="p-tx"></div>
+            <div class="p-tx2"></div>
+		</div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+    <!--相册-->
+    <div class="m-page hide">
+    	<div class="Imgs">
+            <ul>
+                <li class=""><img src="../static/images/redgifts/img01.jpg" /></li>
+                <li class=""><img src="../static/images/redgifts/img02.jpg" /></li>
+                <li class=""><img src="../static/images/redgifts/img03.jpg" /></li>
+                <li class=""><img src="../static/images/redgifts/img04.jpg" /></li>
+                <li class=""><img src="../static/images/redgifts/img05.jpg" /></li>
+                <li class="on"><img src="../static/images/redgifts/img06.jpg" /></li>
+            </ul>
+		</div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+    <!--三张图片"三"字形的-->
+	<div class="m-page hide">
+		<div class="m-img m-img01"></div>
+		<div class="m-animate m-animate01">
+        	<img src="../static/images/redgifts/page031.jpg" class="pos-left" />
+            <img src="../static/images/redgifts/page032.jpg" class="pos-right"/>
+            <img src="../static/images/redgifts/page033.jpg" class="pos-left1"/>
+        </div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+    
+    <!--两张图片左右进入的-->
+    <div class="m-page hide">
+		<div class="m-img m-img00"></div>
+		<div class="m-animate m-animate00">
+			<div class="dire-left"><img src="../static/images/redgifts/page04left.jpg" class="animateLeft"/></div><!--图片从左到右动画-->
+            <div class="dire-right"><img src="../static/images/redgifts/page04right.jpg" class="animateRight"/></div><!--图片从右到左动画-->
+		</div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+   
+    <!--一张图片地图-->
+    <div class="m-page hide">
+		<div class="m-img m-img02"></div>
+		<div class="m-animate m-animate02">
+        	<div class="map1" id="map"><div class="gprs2" id="gprs"></div></div>
+            <div class="map2"></div>
+        </div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+    <!--一张图片分享弹层-->
+    <div class="m-page hide">
+		<div class="m-img m-img03"></div>
+		<div class="m-animate m-animate03"> </div>
+        <div class="u-arrow m-img0"><img src="../static/images/redgifts/page-up.png" id="arrowIcon" class="arrInit" /></div>
+    </div>
+    <!--<div class="m-page hide">
+		<div class="m-img m-img04"></div>
+		<div class="m-animate m-animate04"></div>
+    </div>
+    <div class="m-page hide">
+		<div class="m-img m-img05"></div>
+		<div class="m-animate m-animate05">
+        	<div class="p1"></div>
+            <div class="p2"></div>
+        </div>
+    </div>-->
+   
+    <div class="audio off" id="audio" onclick="musicFun()">
+        <div class="musicIcon animateOn" id="musicIcon"></div>
+    </div>
+    <audio data-src="../static/file/CuandoMeEnamoro.mp3" src="../static/file/CuandoMeEnamoro.mp3" autoplay="autoplay" loop="loop" play="true">
+        Your browser does not support the audio tag.
+    </audio>
+</div>
+<div class="popup"> 
+    <div class="popupBg"></div>
+    <div class="mask"></div>
+</div>
+
+<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/js/transform.js"></script>
+<script type="text/javascript" src="../static/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../static/js/3d.js"></script>
+<script type="text/javascript" src="../static/js/myScrollmain.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout("animateFun(true,0)",300);
+	myTime = setInterval("changImg()",500);
+});
+var thedone = true;
+document.addEventListener('touchstart', function(event) {
+	if(thedone === true){
+		$("audio")[0].play();
+		thedone = false;
+	}
+}, false);
+function musicFun(){
+	var isOn = $("#audio").hasClass("on");
+	if(isOn){
+		$("audio")[0].play();
+		$("#musicIcon").addClass("animateOn");
+		$("#audio").removeClass("on");
+	}else{
+		$("audio")[0].pause();
+		$("#musicIcon").removeClass("animateOn");
+		$("#audio").addClass("on");
+	}
+}
+var num = 0,myTime;
+function changImg(){
+	num++;
+	if(num%2===0){
+		$("#gprs").addClass("gprs").removeClass("gprs2");
+	}else{
+		$("#gprs").removeClass("gprs").addClass("gprs2");
+	}
+}
+function animateFun(dom,num){
+	if(dom){
+		if(0 == num){
+			$(".p-tx,.p-tx2").show();
+			setTimeout(function(){
+				$(".p-tx").animate({"bottom":"74%"},1000);
+			},100);
+			setTimeout(function(){
+				$(".p-tx2").animate({"bottom":"25%"},1000);
+			},1100);
+		}else if(1 == num){
+			imgs();
+		}else if(2 == num){			
+			setTimeout(function(){
+				$(".pos-left").animate({"left":"0"},1000);
+			},100);
+			setTimeout(function(){
+				$(".pos-right").animate({"right":"0"},1000);
+			},1100);
+			setTimeout(function(){
+				$(".pos-left1").animate({"left":"0"},1000);
+			},2100);
+		}else if(3 == num){
+			$(".animateTop,.animateLeft,.animateRight").show();
+			setTimeout(function(){
+				$(".animateLeft").animate({"left":"0"},1000);
+			},100);
+			setTimeout(function(){
+				$(".animateRight").animate({"right":"0"},1000);
+			},1100);
+		}else if(4 == num){
+			//if(myTime){
+//				clearInterval(myTime);	
+//			}
+			
+		}else if(5 == num){
+			$(".popup").show();
+			setTimeout(function(){
+				$(".popup").hide();
+			},3000);
+		}else if(6 == num){
+			//$(".m-animate.m-animate04").animate({"top":"10%"},800);
+		}else if(7 == num){
+			setTimeout(function(){
+				$(".p1").animate({"bottom":"62%"},1000);
+			},100);
+			setTimeout(function(){
+				$(".p2").animate({"bottom":"48.5%"},1000);
+			},1100);
+		}
+	}else{
+		if(0 == num){
+			$(".p-tx").animate({"bottom":"-100%"},500,'easeOutBounce').hide();
+			$(".p-tx2").animate({"bottom":"-100%"},500,'easeOutBounce').hide();
+		}else if(1 == num){
+			imgsInit();
+		}else if(2 == num){
+			$(".pos-left").animate({"left":"-100%"},500,'easeOutBounce');
+			$(".pos-right").animate({"right":"-100%"},500,'easeOutBounce');
+			$(".pos-left1").animate({"left":"-100%"},500,'easeOutBounce');
+		}else if(3 == num){
+			$(".animateTop").animate({"top":"-300%"},500,'easeOutBounce').hide();
+			$(".animateLeft").animate({"left":"-100%"},500,'easeOutBounce').hide();
+			$(".animateRight").animate({"right":"-100%"},500,'easeOutBounce').hide();
+		}else if(4 == num){
+		}else if(5 == num){
+			$("#p30").animate({"left":"-100%"},500,'easeOutBounce');
+			$("#p31").animate({"left":"-100%"},500,'easeOutBounce');
+		}else if(6 == num){
+			//$(".m-animate.m-animate04").animate({"top":"25%"},800,'easeOutBounce');
+		}else if(7 == num){
+			//$(".m-animate.m-animate07").animate({"left":"640px"},800,'easeOutBounce');
+		}
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../static/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+<title>demo集合</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="#demo1" class="li">demo1</a>
+        <a href="#demo2" class="li">demo2</a>
+        <a href="#demo3" class="li">demo3</a>
+        <a href="#demo4" class="li">demo4</a>
+        <a href="#demo5" class="li">demo5</a>
+    </div>
+    <div class="con">
+        <div id="demo1" class="demoBox demo1">
+            <h3>当输入框获取焦点时，文字消失；当输入框失去焦点时，默认文字出现。</h3>
+            <div class="style01">
+                <p>1、一般做法：加默认value值。当遇到密码框时不建议使用。</p>
+                <label>文本框:</label>
+                <input type="text" value="请输入文字" onfocus="if(this.value == '请输入文字') this.value = ''" onblur="if(this.value =='') this.value = '请输入文字'" />
+                <label>密码框:</label>
+                <input type="password" value="请输入密码" onfocus="if(this.value == '请输入密码') this.value = ''" onblur="if(this.value =='') this.value = '请输入密码'" />
+            </div>
+            <div class="style02">
+                <p>2、遇到密码框时的一般处理：采用定位和z-index来达到视觉效果一致。</p>
+                <div class="pwd"><label id="changeVal">请输入密码</label><input type="password" id="password"/></div>
+            </div>
+            <div class="style03">
+                <p>3、利用HTML5属性<span class="warning">placeholder</span></p>
+                <input type="text" placeholder="请输入文字"/>
+                <input type="password" placeholder="请输入密码"/>
+                <p>本次应用方法改变页面结构，未改变结构可引用demo.js内部方法：placeHolder()。placeHolder()方法不适合用于密码框。</p>
+            </div>
+        </div>
+        <div id="demo2" class="demoBox demo2">
+            <h3>上传按钮美化</h3>
+            <div class="styledefault"><label>默认状态：</label><input type="file" class="file"/></div>
+            <div class="style clearfix">
+                <p>美化处理,背景图片为大图时，background-size.在IE7、IE8下无效</p>
+                <div class="upload"><a href="javascript:void(0);" class="uploadBtn01">上传图片</a><input type="file" class="file"/></div>
+            </div>
+            <div class="style clearfix">
+                <p>美化处理，背景图片为小图时。</p>
+                <div class="upload"><div class="uploadBtn02">上传图片</div><input type="file" class="file"/></div>
+            </div>
+            <div class="style01 clearfix">
+                <p>IE6处理：动态创建'file'标签</p>
+                <div class="newFile" id="newFile">上传图片</div>
+            </div>
+        </div>
+        <div id="demo3" class="demoBox demo3">
+            <h3>字段过长，截取字段并用"……"代替</h3>
+            <div class="style">
+                <p>默认样式，无任何处理，作为对比以下段落用。</p>
+                <div class="textWord01">本段文字未做任何处理。本段文字未做任何处理。本段文字未做任何处理。本段文字未做任何处理。</div>
+            </div>
+            <div class="style">
+                <p>常见css做法,存在弊端就是这种截取文字是单行的，无法做到多行字多余截取。</p>
+                <div class="textWord">这是文字测试为200px的的长度。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。</div>
+            </div>
+            <div class="style">
+                <p>js处理。利用字数来进行多行多余字截取。</p>
+                <div class="textWord01 subStr">这是文字测试，长度为200px。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。</div>
+            </div>
+        </div>
+        <div id="demo4" class="demoBox demo4">
+            <h3>select外观美化</h3>
+            <div class="style01">
+               <p>默认情况下的select，无法改变下拉框图标</p>
+               <select>
+                  <option selected="selected">学校类型</option>
+                  <option>大学</option>
+                  <option>高中</option>
+                  <option>初中</option>
+                  <option>小学</option>
+                  <option>其他</option>
+               </select>
+            </div>
+            <div class="style02">
+               <p>仿select下拉框效果，可随意更改下拉框图标和样式。</p>
+               <div class="selectBox">
+                    <span class="checked" data-value="0">学校类型</span>
+                    <ul class="selectList">
+                        <li class="option selected">
+                            <a class="cus-sel-opt-txt" data-value="0" href="javascript:;">学校类型</a>
+                        </li>
+                        <li class="option">
+                            <a class="optionTxt" data-value="1" href="javascript:;">大学</a>
+                        </li>
+                        <li class="option">
+                            <a class="optionTxt" data-value="2" href="javascript:;">高中</a>
+                        </li>
+                        <li class="option">
+                            <a class="optionTxt" data-value="3" href="javascript:;">初中</a>
+                        </li>
+                        <li class="option">
+                            <a class="optionTxt" data-value="4" href="javascript:;">小学</a>
+                        </li>
+                        <li class="option">
+                            <a class="optionTxt" data-value="5" href="javascript:;">其他</a>
+                        </li>
+                    </ul>
+               </div>
+            </div>
+            <div class="style03">
+                <p>将下拉框设置为透明，同时在select标签上覆盖下拉框图标。注：IE6下透明无效。</p>
+                <div class="selectBox02">
+                    <div class="checked02">学校类型</div>
+                    <select>
+                      <option>大学</option>
+                      <option>高中</option>
+                      <option>初中</option>
+                      <option>小学</option>
+                      <option>其他</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+        <div id="demo5" class="demoBox">
+            <div id="banner_news" class="clearfix">
+                <h3>html5视频标签应用</h3>
+                <div class="videobg">	
+                    <video src="../static/file/test.mp4" controls="controls" width="100%" height="355"  poster="../static/images/video.jpg" media="screen">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                </div>
+                <div class="videoinfo">
+                    <div class="infoleft"><span>年级：初一</span><span>版本：人教版</span><span>课程时长：15分钟</span></div>
+                    <div class="inforight"><span>播放：12345</span><span>评论：211</span></div>
+                </div>
+		    </div>
+        </div>
+        <div id="demo6" class="demoBox demo6">
+            <h3>CSS3 自动换行</h3>
+            <div class="style">
+                <p>默认样式，无任何处理，作为对比以下段落用。</p>
+                <div class="textWord">本段文字未做任何处理。本段文字未做任何处理。本段文字未做任何处理。本段文字未做任何处理。</div>
+            </div>
+            <div class="style">
+                <p>文本内容为中文,word-wrap:break-word;无效果</p>
+                <div class="textWord01">这是文字测试为200px的的长度。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。这是一段文字测试，长度为100px。</div>
+            </div>
+            <div class="style">
+                <p>允许对长的不可分割的<span class="warning">单词</span>进行分割并换行到下一行。</p>
+                <div class="textWord01">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</div>
+            </div>
+        </div>
+        <div id="demo7" class="demoBox demo7">
+            <h3>文本阴影效果！</h3>
+            <div class="style">
+                <p class="style01">文本阴影效果！</p>
+                <p class="style02">白色文本的阴影效果！</p>
+                <p class="style03">霓虹灯效果的文本阴影！</p>
+            </div>
+        </div>
+    </div>
+    <div id="goTop" class="goTop"><a href="javascript:void(0);" onclick="goTo(210);">返回头部</a></div>
+</body>
+<script type="text/javascript" src="../static/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/js/demo.js"></script>
+<script type="text/javascript" src="../static/js/placeHolder.js"></script>
+</html>

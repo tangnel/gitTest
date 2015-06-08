@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮播</title>
+</head>
+<style>
+li{list-style:none;}
+*{margin:0; padding:0;}
+.carouse{width:800px; height:400px; position:relative;}
+.carouse .imgs{width:100%; height:100%; position:absolute; top:0; left:0; z-index:2; overflow:hidden;}
+.carouse .imgs li{width:100%; height:100%; float:left; display:none;}
+.carouse .imgs li.on{ display:block}
+.carouse .imgs li img{width:100%; height:100%;}
+.carouse ol{width:50%; height:30px; position:absolute; bottom:0; left:25%; z-index:5;}
+.carouse ol li{ width:15px; height:15px; border-radius:15px; background:#fff;float:left; margin-right:10px; cursor:pointer; font-size:12px; text-align:center; vertical-align:15px;}
+.carouse ol li.on{background:#666; color:#fff;}
+.carouse p{z-index:2;position:absolute;text-indent:-9999px;width:28px;height:51px;top:40%;cursor:pointer}
+.carouse .prev{text-indent:-9999px;background:url(../static/images/previous.png) no-repeat;left:0px}
+.carouse .next{background:url(../static/images/next.png) no-repeat;top:40%;right:0px}
+</style>
+<body>
+    <div class="carouse" id="carousel">
+        <ul class="imgs">
+             <li class="on"><img src="../static/images/banner_01.jpg" /></li>
+             <li><img src="../static/images/banner_02.jpg" /></li>
+             <li><img src="../static/images/banner_03.jpg" /></li>
+             <li><img src="../static/images/banner_04.jpg" /></li>
+        </ul>
+    </div>
+    
+</body>
+<script type="text/javascript" language="javascript" src="../static/js/slide.js"></script>
+</html>
