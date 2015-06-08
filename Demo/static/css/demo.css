@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+body{width:100%; margin:0 auto; background:#f8f8f8;}
+::-webkit-input-placeholder { color:#ddd; }
+input:-moz-placeholder { color:#ddd; }
+.warning{color:#F00; margin:0 5px;}
+.header{width:875px; margin:0 auto; height:32px; line-height:32px; border-radius:5px; box-shadow:3px 3px 2px #EEB055; position:fixed; top:0; left:50%; _left:; margin-left:-438px; _margin-left:auto; z-index:999;  _position:absolute;_top:expression(eval(document.documentElement.scrollTop)); overflow:hidden;}
+.header .li{display:inline-block; float:left; width:175px; height:32px; line-height:32px; text-align:center; color:#fff; background:orange;}
+.li:hover{background:#fff; color:#000;}
+.con{width:875px; _width:855px; background:#fff; margin:0 auto; margin-top:20px; _padding-top:20px;}
+.con .demoBox{width:100%; padding:20px 0; border-bottom:1px dashed #666; _padding-left:20px;}
+.con .demoBox h3{text-indent:20px; _text-indent:0;}
+.con .demoBox >div{margin:0 20px;}
+.con .demoBox input{text-indent:5px; color:#ddd;}
+
+/*demo1**start*/
+.con .demo1 .style01 label{margin-right:10px;}
+.con .demo1 .style01 input{margin-right:10px; height:25px; line-height:25px;}
+.con .demo1 .style02 .pwd{width:150px; height:25px; position:relative;}
+.con .demo1 .style02 .pwd label{width:100%; height:25px; line-height:25px; position:absolute; left:0; top:0; z-index:100; color:#ddd; cursor:pointer; text-indent:5px;}
+.con .demo1 .style02 .pwd input{width:100%; height:25px; line-height:25px; position:absolute; left:0; top:0; z-index:99;}
+.con .demo1 .style03 input{ display:block; width:150px; height:25px; line-height:25px; margin-bottom:3px}
+/*demo1**end*/
+
+/*demo2**start*/
+.con .demo2 .styledefault .file{margin:10px 0;}
+.con .demo2 .style{width:100%;}
+.con .demo2 .style >p{width:100%; height:47px; line-height:47px; margin:0; padding:0;}
+.con .demo2 .style .upload{width:400px; position:relative; height:47px; line-height:47px; overflow:hidden;}
+.con .demo2 .style .upload .uploadBtn01{display:block; width:120px; height:47px; line-height:47px; text-align:center; background:url(../images/uploadBig.jpg) 10px 10px no-repeat; background-size:20px 22px; border-radius:5px; cursor:pointer; position:absolute; top:0; left:0; color:#000;}
+.con .demo2 .style .upload .uploadBtn02{display:block; width:120px; height:47px; line-height:47px; text-align:center; background:url(../images/upload.jpg) 10px 10px no-repeat; background-size:20px 22px; border-radius:5px; cursor:pointer; position:absolute; top:0; left:0; color:#000;}
+.con .demo2 .style .upload .file{width:120px; height:47px; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); position:absolute; top:0; left:0;}
+.con .demo2 .style01 .newFile{width:120px; height:47px; line-height:47px; text-align:center; background:#FF8000; color:#fff; cursor:pointer;}
+/*demo2**end*/
+
+/*demo3**start*/
+.con .demo3 .style .textWord{width:200px; height:50px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis; background:#EA8D39; color:#fff; }
+.con .demo3 .style .textWord01{width:200px; height:50px; background:#EA8D39; color:#fff; }
+/*demo3**end*/
+
+/*demo4**start*/
+.selectBox{width:120px; border:1px solid #aab2bd; background:url(../images/cussel_nor.png) no-repeat right center; height:24px; line-height:24px;cursor:pointer; border-radius:3px ;position:relative;}
+.checked{display:block; width:100px; height:24px; line-height:24px; position:absolute; top:0; left:0; z-index:99; text-indent:20px;}
+.selectList{display:none; max-height:300px; background:#fff; position:absolute; top:22px; left:-1px; width:120px; overflow-x:hidden; overflow-y:auto; z-index:100; border:solid #aab2bd; border-width:0 1px 1px 1px; padding:0; margin:0;}
+.selectBox ul li:hover{background:#dbe2e4;}
+.selectBox ul li a{padding-left:20px; color:#000;}
+.selectBox02{width:120px; border:1px solid #aab2bd; background:url(../images/cussel_nor.png) no-repeat right center; height:24px; line-height:24px;cursor:pointer; border-radius:3px ;position:relative;}
+.checked02{display:block; width:120px; height:24px; line-height:24px; position:absolute; top:0; left:0; z-index:99; text-indent:20px;}
+.selectBox02 select{position:absolute; top:0; left:0 -2px!important;  width:120px; opacity:0; -moz-opacity:0; filter:alpha(opacity=0); z-index:100}
+/*demo4**end*/
+
+/*demo5**start*/
+#banner_news h3{ margin-bottom:20px; text-indent:0;}
+#banner_news .videobg{ width:100%; background:black; text-align:center; color:#fff;}
+#banner_news .videoinfo{ width:100%; background:#2e2e2e; height:57px;}
+.infoleft{ width:50%; float:left; padding-left:58px; padding-top:21px}
+.videoinfo span{ color:#e3e3e3; margin-right:30px}
+.inforight{ float:right;padding-right:35px; padding-top:21px}
+/*demo5**end*/
+
+/*demo6**start*/
+.con .demo6 .style .textWord{width:200px; height:60px; background:#EA8D39; color:#fff; }
+.con .demo6 .style .textWord01{width:200px; height:98px; word-wrap:break-word; background:#EA8D39; color:#fff; }
+/*demo6**end*/
+
+/*demo7**start*/
+.demo7 .style01{text-shadow:5px 5px 5px #FF0000; font-size:28px;}
+.demo7 .style02{text-shadow:2px 2px 4px #000000; font-size:28px; color:#fff;}
+.demo7 .style03{text-shadow:0 0 3px #FF0000; font-size:28px;}
+/*demo7**end*/
+
+.goTop{width:15px; height:100px; position:fixed;right:6px; bottom:30px; display:none; _position:absolute;_top:expression(eval(document.documentElement.scrollTop+300));}
+.goTop a{width:15px; height:100px; display:block; color:#F33;}
+
+ /* IE6 仿抖动 */ 
+*html{background-image:url(about:blank);background-attachment:fixed}

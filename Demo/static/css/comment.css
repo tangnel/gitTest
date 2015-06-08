@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+/***
+**Author:杨丽娟
+**Date:2015-3-13
+**/
+body{ background:#f0eff4}
+.m-comment-warp{ margin:0 12px;}
+.m-comment-box{ background:#fff;width:100%; min-width:296px;margin-top:10px;}
+
+/*评论内容展示样式**/
+.style01{}
+.style01 .m-comment-userinfo{ height:40px; padding-top:10px;}
+.style01 .m-comment-userinfo .fl{ width:173px; float:left;}
+.style01 .m-comment-userinfo .fl div{ float:left;}
+.style01 .m-comment-userinfo .fl div img{ width:40px; height:40px; margin-left:8px;}
+.style01 .m-comment-userinfo .fl div .username{color:#1c1e1d; font-size:12px; margin-left:10px; margin-top:5px;}
+.style01 .m-comment-userinfo .fl div .datetime{ color:#bebebe; font-size:10px; margin-left:10px;}
+.style01 .m-comment-userinfo .fright{width:80px; float:right; height:40px; margin-right:12px; display:none;}
+.style01 .m-comment-userinfo .fright li{ width:5px; height:5px; border-radius:5px; background:#dddddd; float:right; margin-left:5px; margin-top:15px;}
+.style01 .m-comment-con{ font-size:14px; line-height:22px;color:#1c1e1d; padding:8px 10px 12px;}
+.style01 .m-comment-icon{ background:#f9f9f9; height:46px;}
+.style01 .m-comment-icon li{ float:left; width:24%; border-right:1px solid #e9e9e9; margin:3px 0; color:#989898; height:40px; line-height:40px; text-align:center}
+.style01 .m-comment-icon li img{ width:16px; height:16px; margin-right:6px;}
+.style01 .m-comment-icon li span{ line-height:16px;vertical-align: middle;}
+.style01 .m-comment-icon li:last-child{border:none;}
+.style01 .m-comment-icon li:nth-child(3){ background:url(../images/comment/zhuanfa.png) 45% 12px no-repeat; background-size:18px 17px;}
+
+/*赞的用户头像样式*/
+.style02{ height:65px; padding-top:1px; background:url(../images/comment/icon5.png) 21px -1px no-repeat; background-size:13px 7px; margin-top:5px;}
+.style02 ul{ background:#fff; height:60px; margin-top:5px;}
+.style02 ul li{ height:38px; line-height:38px; float:left; margin:10px 0 10px 8px; color:#b8b8b8}
+.style02 img{ width:38px; height:38px; border-radius:38px 38px;}
+
+.more-zan ul li:last-child{ float:right; margin-right:12px}
+.more-zan ul li:last-child img{ width:8px; height:11px; border-radius:0;}
+
+/*评论样式*/
+.style03{ height:40px;}
+.style03 input{ height:40px; border:none; background:#fff; width:83%; float:left; text-indent:5px;}
+.style03 a{ width:17%; color:#fff; display:block; height:40px; background:#59baf9; float:left; text-align:center; font-size:14px; line-height:40px;}
+
+
+/*最近点赞的人**/
+.m-attention-warp{ background:#fff;}
+.m-attention-box{min-width:300px;}
+.m-attention-box li{ height:64px; border-bottom:1px solid #f0eff4; width:100%;}
+.m-attention-box li .m-attention-fl{ width:70%; float:left;margin-left: 10px;}
+.m-attention-box li .m-attention-fl div{ float:left;margin-top:11px;}
+.m-attention-box li .m-attention-fl div img{ width:42px; height:42px; border-radius:42px;}
+.m-attention-box li .m-attention-fl div .m-attention-username{font-size:14px; color:#1c1e1d; margin-left:12px; margin-top:5px;}
+.m-attention-box li .m-attention-fl div .m-attention-info{color:#b8b8b8; font-size:12px; margin-left:12px;}
+.m-attention-box li .m-attention-fl div .m-attention-info span{ margin-right:15px;}
+.m-attention-box li .m-attention-fr{ float:right; margin-right:10px;}
+.m-attention-box li .m-attention-fr .btn{ width:56px; height:25px; background:#fa4b5a; line-height:25px; vertical-align:middle; text-align:center;margin-top: 19px;}
+.m-attention-box li .m-attention-fr .btn img{ width:9px; height:9px;}
+.m-attention-box li .m-attention-fr .btn span{ color:#fff; font-size:12px; margin-left:5px;}

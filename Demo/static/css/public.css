@@ -1,0 +1,26 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{margin:0px;padding:0px;}
+body,ul,ol,h1,h2,h3,p,form,input,ul,ol,input{font-family:"Microsoft Yahei";color:#666;font-size:14px;}
+ul,ol{list-style:none;}
+a{ color:#000;text-decoration:none;cursor:pointer;}
+li{list-style:none}
+li a:hover{text-decoration:none;}
+a img{border:none;}
+.clear{ clear:both; font-size:0px; line-height:0px; height:0px; visibility:hidden;}
+body{color:#666; background:#fff;}
+.left{ float:left;}
+.right{ float:right;}
+.center{text-align:center;}
+form{ border:none; list-style:none;}
+img {behavior: url("pngbehavior.htc");vertical-align:middle;border:0 none;height:auto;}
+table{border-collapse:collapse;border-spacing:0}
+label{margin-bottom:5px;display:block;}
+label,input,button,select,textarea{font-size:13px;line-height:16px;font-weight:normal;}
+textarea{vertical-align:middle;}
+table{border-collapse:collapse;}
+.clearfix:after {content: "."; display: block;  height: 0; font-size:0; clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}   
+* html .clearfix {height:1%;}
+.clearfix {display: block;}
+*html{ background-image:url(about:blank);background-attachment:fixed;}

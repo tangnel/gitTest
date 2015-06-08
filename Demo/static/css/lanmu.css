@@ -1,0 +1,18 @@
+﻿.divHead{padding:10px 0 13px;}
+.divHead h2{padding:0 18px 0 12px;float:left;height:30px;font-size:14px;font-weight:normal;line-height:30px;border-radius:0 15px 15px 0;color:#FFF;}
+.divHead01 h2{background-color:#FA4655;}
+.divHead02 h2{background-color:#1D9BF5;}
+.aBtnSure{display:block;float:right;width:30px;height:30px;margin-right:10px;background:url(../../images/newTuiXiang/aBtnSure.png) no-repeat center center;background-size:30px 30px;}
+.lanmu{padding:0 8px;}
+.lanmu a{display:block;float:left;margin:5px 4px 10px;height:30px;width:70px;}
+.lanmuOnLi{position:relative; height:30px; float:left;margin:5px 5px 10px;width:70px;}
+.aLanmuOn{display:block;float:left;margin:0;width:70px;font-size:14px;line-height:30px;border:1px solid #F4F4F4;border-radius:15px;text-align:center;color:#21292c;}
+.iconBtnBg{dispaly:block;width:30px; height:30px; position:absolute; top:-4px; left:-4px; cursor:pointer; z-index:10;}
+.iconBtn{dispaly:block;width:15px; height:15px; border-radius:15px;color:#d2d2d2; background-color:#ebebeb; position:absolute; top:0px; left:0px; line-height:15px; text-align:center; z-index:11;}
+
+.aLanmuOn.last{border:1px dashed #F4F4F4;}
+.aLanmuOut{border:1px solid #F4F4F4;border-radius:15px;text-align:center; position:relative;}
+.aLanmuOut span{dispaly:inline-block;width:15px; height:15px; border-radius:15px;color:#d2d2d2; background-color:#ebebeb; position:absolute; top:-3px; left:-4px; line-height:15px; text-align:center}
+.lanmu b{display:inline-block;vertical-align:top;font-size:14px;font-weight:normal;line-height:30px;color:#21292c;}
+
+.editBtn{display:block;float:right;width:64px;height:30px;text-align:center;line-height:30px;margin-right:10px; background-color:#1d9bf5; color:#fff; border-radius:20px}
