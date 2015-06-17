@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出层</title>
+</head>
+<style>
+*{font-size:14px; font-family:'微软雅黑'}
+.maskDiv{width:100%; height:100%; position:fixed; top:0; left:0; _position:absolute; _top:expression(eval(document.documentElement.scrollTop)); z-index:1000; display:none;}
+.maskBg{width:100%; height:100%; min-height:500px; background:#000; opacity:0.78; -moz-opacity:0.78; filter:alpha(opacity=78); position:absolute; top:0; left:0; z-index:1001; _position:absolute; _height:500px;}
+.maskCon{width:690px; height:376px; position:absolute; left:50%; top:50%; margin-left:-345px; margin-top:-188px; z-index:1002; background:#fff; _display:inline; _margin-top:100px;}
+.maskconHead{border-bottom:1px dotted #CCC;}
+.contitle{width:80%; float:left; text-indent:15px; padding-top:10px;}
+.close{ width:25px; height:40px; float:right; padding:0px; cursor:pointer; font-size:24px; text-align:center;}
+.maskcontext{width: 100%; height: 180px; float: left; padding:0 20px;}
+.maskconBtn{width:100%; float:left;}
+.sure,.cancle{width:100px; height:54px; background:#a5cd4d; background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#a5cd4d), to(#86b61b)); background:-webkit-linear-gradient(top,#a5cd4d,#86b61b); background:-moz-linear-gradient(top,#a5cd4d,#86b61b); background:-m-linear-gradient(top,#a5cd4d,#86b61b); background:-o-linear-gradient(top,#a5cd4d,#86b61b); color:#fff; float:left; border:1px solid #174500; border-radius:3px; text-align:center; font-size:14px; margin-left:265px; cursor:pointer; _display:inline;}
+</style>
+<body>
+<input type="button" value="点击我弹出框" id="popup"/>
+</body>
+
+<script type="text/javascript" src="../static/js/popup.js"></script>
+</html>
